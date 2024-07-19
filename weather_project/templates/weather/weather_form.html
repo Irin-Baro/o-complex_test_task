@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Узнай прогноз погоды
+{% endblock %}
+
+{% block content %}
+
+    <h1>Прогноз погоды</h1>
+
+    {% if last_city %}
+        <p>Последний раз Вы искали погоду в городе <b>{{ last_city }}</b></a></p>
+    {% endif %}
+
+    {% with card_header='Узнай погоду в любом городе!' button='Узнать погоду' %}
+        {% include 'includes/form.html' %}
+    {% endwith %}
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Ошибка 403csrf{% endblock %}
+
+{% block content %}
+
+  <h1>Custom CSRF check error. 403</h1>
+  <p>При отправке формы не был отправлен csrf-токен</p>
+  <a href="{% url 'weather:weather-view' %}">Идите на главную</a>
+  
+{% endblock %}

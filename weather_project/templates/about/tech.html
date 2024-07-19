@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Технологии{% endblock %}
+
+{% block content %}
+
+  <div class="row">
+    <h1>Технологии</h1>
+    <aside class="col-12 col-md-3">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          Python 3.9.10
+        </li>
+        <li class="list-group-item">
+          Django 4.2.14
+        </li>
+        <li class="list-group-item">
+          Django REST Framework
+        </li>
+        <li class="list-group-item">
+          SQL
+        </li>
+        <li class="list-group-item">
+          PostgreSQL
+        </li>
+        <li class="list-group-item">
+          Docker
+        </li>
+        <li class="list-group-item">
+          Postman
+        </li>
+      </ul>
+    </aside>
+    <article class="col-12 col-md-9">
+      <p><a href="https://github.com/Irin-Baro/o-complex_test_task"><b>Проект</b></a> 
+          предоставляет пользователям следующие возможности:
+        <ul style="margin-left: 32px;" class="list-group list-group-flush">
+          <li>
+            узнавать погоду в любом городе по местному времени
+          </li>
+          <li>
+            регистрироваться в приложении (добавлена функция смены пароля)
+          </li>
+          <li>
+            после авторизации доступна история своих запросов
+          </li>
+          <li>
+            при повторном посещении сайта предложено посмотреть погоду в последнем запрашиваемом городе
+          </li>
+          <li>
+            реализована функция api, позволяющая узнать какие города и сколько раз запрашивали на сайте.
+            Запрос доступен при запущенном приложении по адресу: 
+            <a href="http://127.0.0.1:8000/api/v1/city-search-count/">http://127.0.0.1:8000/api/v1/city-search-count/</a>
+          </li>
+          <li>
+            в проекте написаны тесты
+          </li>
+          <li>
+            приложение помещено в Docker-контейнер
+          </li>
+        </ul>
+      </p>
+    </article>
+  </div>
+
+{% endblock %}

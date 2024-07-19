@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+  История поиска
+{% endblock %}
+
+{% block content %}
+
+  <h1>История поиска</h1> 
+
+  {% include 'weather/includes/button.html' %}
+
+  {% if history %}
+    {% for entry in history %}
+      <li>
+        Город: {{ entry.city_name }} <br>
+        Дата и время поиска: {{ entry.search_date }} <br>
+      </li>
+    {% endfor %}
+  {% else %}
+    <li>История отсутствует.</li>
+  {% endif %}
+
+{% endblock %}

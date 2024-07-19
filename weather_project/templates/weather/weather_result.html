@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Прогноз погоды
+{% endblock %}
+
+{% block content %}
+{% load user_filters %}
+
+  <h1>Прогноз погоды для города {{ city_name }}</h1>
+  <h3>В городе {{ city_name }} сейчас {{ local_time }}</h1>
+
+  {% include 'weather/includes/button.html'%}
+
+  {% if weather_data.hourly.grouped %}
+  <ul>
+    {% for date, times in weather_data.hourly.grouped.items %}
+      <li>Дата: {{ date }}
+        <ol style="list-style-type: none;">
+          {% for item in times %}
+            <li>{{ item.time }} t={{ item.temperature }}&deg;C</li>
+          {% endfor %}
+        </ol>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>Нет данных для отображения.</p>
+  {% endif %}
+  
+{% endblock %}
